@@ -1,6 +1,6 @@
 <?php
 
-print "welcome to my php site !!";
+print "Welcome to my php site !!";
 
 ?>
 
