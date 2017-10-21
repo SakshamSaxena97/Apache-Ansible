@@ -1,0 +1,48 @@
+- name: my web server setup
+  hosts: web
+  tasks:
+    - name: install apache server
+      package:
+       name: httpd
+       state: present
+       use: yum
+
+    - name: install php
+      package:
+       name: php
+       state: present
+       use: yum
+
+    - name: creating web document folder
+      file:
+       path: /webcontent
+       state: directory
+       owner: apache
+       mode: 0750
+
+    - name: conf web file
+      copy:
+       dest: /etc/httpd/conf.d/cgi.conf
+       src: /files/cgi.conf
+       owner: apache
+       mode: 0640
+
+    - name: deploy php site
+      copy:
+       dest: /webcontent
+       src: /files/index.php
+       owner: apache
+       mode: 0640
+
+    - name: start web service
+      service:
+       name: httpd
+       state: started
+       enabled: yes
+
+    - name: enable 80 port in firewalld
+      firewalld:
+       service: http
+       state: enabled
+       permanent: true
+
