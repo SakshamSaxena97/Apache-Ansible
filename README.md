@@ -15,7 +15,7 @@ $ vim /etc/ansible/hosts
 
 192.168.1.12  ansible_ssh_user=root  ansible_ssh_pass=redhat 
 
-192.168.1.18  ansible_ssh_user=abcd  ansible_ssh_pass=redhat
+192.168.1.18  ansible_ssh_user=abcd  ansible_ssh_pass=red
 
 # Run yml file
 
