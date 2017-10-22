@@ -20,3 +20,5 @@ $ vim /etc/ansible/hosts
 # Run yml file
 
 $ ansible-playbook --syntax-check  webserver.yml
+
+$ ansible-playbook webserver.yml
