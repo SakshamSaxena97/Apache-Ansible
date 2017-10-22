@@ -17,3 +17,6 @@ $ vim /etc/ansible/hosts
 
 192.168.1.18  ansible_ssh_user=abcd  ansible_ssh_pass=redhat
 
+# Run yml file
+
+$ ansible-playbook --syntax-check  webserver.yml
