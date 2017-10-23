@@ -33,6 +33,7 @@
        src: /files/index.php
        owner: apache
        mode: 0640
+       notify: web_restart
 
     - name: start web service
       service:
@@ -46,4 +47,11 @@
        state: enabled
        permanent: true
        immediate: true
+  
+  handlers:
+    - name: web_restart
+      service:
+       name: httpd
+       state: restarted
+       enabled: yes
 
