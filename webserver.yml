@@ -1,17 +1,17 @@
 - name: my web server setup
   hosts: web
+  vars:
+   mypack: php
+   
+
   tasks:
     - name: install apache server
       package:
-       name: httpd
+       name: "{{  item }}"
        state: present
-       use: yum
-
-    - name: install php
-      package:
-       name: php
-       state: present
-       use: yum
+      with_items:
+       - httpd
+       - php
 
     - name: creating web document folder
       file:
