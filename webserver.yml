@@ -23,14 +23,14 @@
     - name: conf web file
       copy:
        dest: /etc/httpd/conf.d/my.conf
-       src: /files/my.conf
+       src: ~/Desktop/Apache-Ansible/my.conf
        owner: apache
        mode: 0640
 
     - name: deploy php site
       copy:
        dest: /webcontent
-       src: /files/index.php
+       src: ~/Desktop/Apache-Ansible/index.php
        owner: apache
        mode: 0640
        notify: web_restart
