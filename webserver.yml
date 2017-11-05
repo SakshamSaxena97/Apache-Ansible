@@ -22,8 +22,8 @@
 
     - name: conf web file
       copy:
-       dest: /etc/httpd/conf.d/cgi.conf
-       src: /files/cgi.conf
+       dest: /etc/httpd/conf.d/my.conf
+       src: /files/my.conf
        owner: apache
        mode: 0640
 
