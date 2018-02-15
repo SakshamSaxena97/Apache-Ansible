@@ -11,8 +11,11 @@ $ yum  localinstall ansible-2.3.1.0-1.el7.noarch.rpm
 
 $ vim /etc/ansible/hosts
 
+
 [web]
+
 192.168.1.12  ansible_ssh_user=root  ansible_ssh_pass=red 
+
 192.168.1.18  ansible_ssh_user=abcd  ansible_ssh_pass=hat
 
 # Run yml file
